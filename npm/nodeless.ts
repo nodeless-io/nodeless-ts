@@ -14,12 +14,12 @@ export class Nodeless {
   }
 
   async createPayWallRequest(paywallID: string) {
-    const json = await this.#callAPI(`paywall/${paywallID}/request`, 'POST');
+    const json = await this.callAPI(`paywall/${paywallID}/request`, 'POST');
     return json;
   }
 
   async getPayWallRequest(paywallID: string, requestID: string) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `paywall/${paywallID}/request/${requestID}`,
       'GET'
     );
@@ -27,7 +27,7 @@ export class Nodeless {
   }
 
   async getPayWallRequestStatus(paywallID: string, requestID: string) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `paywall/${paywallID}/request/${requestID}/status`,
       'GET'
     );
@@ -35,7 +35,7 @@ export class Nodeless {
   }
 
   async getAllPaywallWebhooks(paywallID: string) {
-    const json = await this.#callAPI(`paywall/${paywallID}/webhook`, 'GET');
+    const json = await this.callAPI(`paywall/${paywallID}/webhook`, 'GET');
     return json;
   }
 
@@ -58,7 +58,7 @@ export class Nodeless {
       status: 'active' | 'inactive';
     }
   ) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `paywall/${paywallID}/webhook`,
       'POST',
       requestBody
@@ -67,7 +67,7 @@ export class Nodeless {
   }
 
   async getPaywallWebhook(paywallID: string, webhookID: string) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `paywall/${paywallID}/webhook/${webhookID}`,
       'GET'
     );
@@ -75,7 +75,7 @@ export class Nodeless {
   }
 
   async deletePaywallWebhook(paywallID: string, webhookID: string) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `paywall/${paywallID}/webhook/${webhookID}`,
       'DELETE'
     );
@@ -100,7 +100,7 @@ export class Nodeless {
       status: 'active' | 'inactive';
     }
   ) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `paywall/${paywallID}/webhook/${webhookID}`,
       'PUT',
       requestBody
@@ -109,7 +109,7 @@ export class Nodeless {
   }
 
   async getAllPaywalls() {
-    const json = await this.#callAPI('paywall', 'GET');
+    const json = await this.callAPI('paywall', 'GET');
     return json;
   }
 
@@ -119,12 +119,12 @@ export class Nodeless {
     price: number;
     settings?: { [key: string]: any };
   }) {
-    const json = await this.#callAPI('paywall', 'POST', requestBody);
+    const json = await this.callAPI('paywall', 'POST', requestBody);
     return json;
   }
 
   async getPaywall(paywallID: string) {
-    const json = await this.#callAPI(`paywall/${paywallID}`, 'GET');
+    const json = await this.callAPI(`paywall/${paywallID}`, 'GET');
     return json;
   }
 
@@ -137,21 +137,17 @@ export class Nodeless {
       settings?: { [key: string]: any };
     }
   ) {
-    const json = await this.#callAPI(
-      `paywall/${paywallID}`,
-      'PUT',
-      requestBody
-    );
+    const json = await this.callAPI(`paywall/${paywallID}`, 'PUT', requestBody);
     return json;
   }
 
   async deletePaywall(paywallID: string) {
-    const json = await this.#callAPI(`paywall/${paywallID}`, 'DELETE');
+    const json = await this.callAPI(`paywall/${paywallID}`, 'DELETE');
     return json;
   }
 
   async getStatus() {
-    const json = await this.#callAPI('status', 'GET');
+    const json = await this.callAPI('status', 'GET');
     return json;
   }
 
@@ -181,7 +177,7 @@ export class Nodeless {
       metadata?: { [key: string]: any };
     }
   ) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `store/${storeID}/invoice`,
       'POST',
       requestBody
@@ -190,7 +186,7 @@ export class Nodeless {
   }
 
   async getStoreInvoice(storeID: string, invoiceID: string) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `store/${storeID}/invoice/${invoiceID}`,
       'GET'
     );
@@ -198,7 +194,7 @@ export class Nodeless {
   }
 
   async getStoreInvoiceStatus(storeID: string, invoiceID: string) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `store/${storeID}/invoice/${invoiceID}`,
       'GET'
     );
@@ -206,7 +202,7 @@ export class Nodeless {
   }
 
   async getAllStoreWebhooks(storeID: string) {
-    const json = await this.#callAPI(`store/${storeID}/webhook`, 'GET');
+    const json = await this.callAPI(`store/${storeID}/webhook`, 'GET');
     return json;
   }
 
@@ -229,7 +225,7 @@ export class Nodeless {
       status: 'active' | 'inactive';
     }
   ) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `store/${storeID}/webhook`,
       'POST',
       requestBody
@@ -238,7 +234,7 @@ export class Nodeless {
   }
 
   async getStoreWebhook(storeID: string, webhookID: string) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `store/${storeID}/webhook/${webhookID}`,
       'GET'
     );
@@ -246,7 +242,7 @@ export class Nodeless {
   }
 
   async deleteStoreWebhook(storeID: string, webhookID: string) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `store/${storeID}/webhook/${webhookID}`,
       'DELETE'
     );
@@ -271,7 +267,7 @@ export class Nodeless {
       status: 'active' | 'inactive';
     }
   ) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `store/${storeID}/webhook/${webhookID}`,
       'PUT',
       requestBody
@@ -280,17 +276,17 @@ export class Nodeless {
   }
 
   async getAllStores() {
-    const json = await this.#callAPI('store', 'GET');
+    const json = await this.callAPI('store', 'GET');
     return json;
   }
 
   async getStore(storeID: string) {
-    const json = await this.#callAPI(`store/${storeID}`, 'GET');
+    const json = await this.callAPI(`store/${storeID}`, 'GET');
     return json;
   }
 
   async getAllTransactions(isFee = false) {
-    const json = await this.#callAPI(
+    const json = await this.callAPI(
       `transaction${isFee ? '?isFee=1' : ''}`,
       'GET'
     );
@@ -298,11 +294,11 @@ export class Nodeless {
   }
 
   async getTransaction(transactionID: string) {
-    const json = await this.#callAPI(`transaction/${transactionID}`, 'GET');
+    const json = await this.callAPI(`transaction/${transactionID}`, 'GET');
     return json;
   }
 
-  async #callAPI(
+  async callAPI(
     path = '',
     method: 'POST' | 'GET' | 'PUT' | 'DELETE',
     requestBody = {}

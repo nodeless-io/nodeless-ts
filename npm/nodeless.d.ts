@@ -1,5 +1,4 @@
 export declare class Nodeless {
-    #private;
     readonly API_KEY: string;
     readonly BASE_URL: string;
     constructor(API_KEY: string, API_VERSION?: string, testnet?: boolean);
@@ -71,4 +70,5 @@ export declare class Nodeless {
     getStore(storeID: string): Promise<unknown>;
     getAllTransactions(isFee?: boolean): Promise<unknown>;
     getTransaction(transactionID: string): Promise<unknown>;
+    callAPI(path: string | undefined, method: 'POST' | 'GET' | 'PUT' | 'DELETE', requestBody?: {}): Promise<unknown>;
 }
