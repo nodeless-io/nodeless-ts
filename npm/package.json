@@ -1,0 +1,38 @@
+{
+  "name": "nodeless-ts",
+  "version": "1.0.0",
+  "description": "A simple, wrapper for making API requests to nodeless.io written in TypeScript",
+  "main": "nodeless.js",
+  "module": "nodeless.js",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "types": "nodeless.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodeless-io/nodeless-ts.git"
+  },
+  "keywords": [
+    "nodeless",
+    "bitcoin",
+    "lightning"
+  ],
+  "author": "SuperPhatArrow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodeless-io/nodeless-ts/issues"
+  },
+  "homepage": "https://github.com/nodeless-io/nodeless-ts#readme",
+  "devDependencies": {
+    "@types/node": "^18.15.3",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.1"
+  }
+}

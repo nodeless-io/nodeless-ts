@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "declaration": true,
+    "declarationMap": false,
+    "declarationDir": ".",
+    "target": "es2020",
+    "lib": ["es2020"],
+    "module": "Node16",
+    "moduleResolution": "node",
+    "outDir": ".",
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "baseUrl": "."
+  },
+  "include": ["./nodeless.ts"],
+  "exclude": ["node_modules"]
+}
