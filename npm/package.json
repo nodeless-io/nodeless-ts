@@ -1,6 +1,6 @@
 {
-  "name": "nodeless-ts",
-  "version": "1.0.0",
+  "name": "nodeless-io",
+  "version": "0.0.1",
   "description": "A simple, wrapper for making API requests to nodeless.io written in TypeScript",
   "main": "nodeless.js",
   "module": "nodeless.js",
