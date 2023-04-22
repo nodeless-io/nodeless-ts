@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch, { RequestInit } from 'node-fetch';
 const MAIN_NET = 'https://nodeless.io/api/';
 const TEST_NET = 'https://testnet.nodeless.io/api/';
 
@@ -311,11 +311,9 @@ export class Nodeless {
         Accept: 'application/json',
       };
       const body = JSON.stringify(requestBody);
-      const response = await fetch(url, {
-        method,
-        headers,
-        body,
-      });
+      const options: RequestInit = { method, headers };
+      if (method !== 'GET') options.body = body;
+      const response = await fetch(url, options);
       const json = (await response.json()) ?? {};
       return json;
     } catch (err) {
